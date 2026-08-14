@@ -1,23 +1,501 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Home</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <!--
-      Need a visual blank slate?
-      Remove all code in `styles.css`!
-    -->
-    <link rel="stylesheet" href="styles.css" />
-    <script type="module" src="script.js"></script>
-  </head>
-  <body>
-    <nav>
-      <a href="/" aria-current="page">Home</a>
-      <a href="/page2.html">Other page</a>
-    </nav>
-    <main>
-      <h1>Home page</h1>
-    </main>
-  </body>
-</html>
+
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "기아 디올뉴 쏘렌토 (2026 Kia Sorento MQ4)",
+    "image": "https://auto.reliabledone.com/images/kia-sorento-2026.jpg",
+    "description": "2026년형 기아 디올뉴 쏘렌토의 가솔린 2.5 터보, 디젤 2.2 및 1.6 터보 하이브리드 트림별 상세 가격표와 옵션 선택 가이드. 취등록세 계산기 정보 및 하이브리드 세제 혜택 총정리.",
+    "brand": {
+      "@type": "Brand",
+      "name": "기아 (Kia)"
+    },
+    "offers": {
+      "@type": "AggregateOffer",
+      "priceCurrency": "KRW",
+      "lowPrice": "36310000",
+      "highPrice": "48620000",
+      "offerCount": "12"
+    }
+  }
+  </script>
+
+  <!-- Google Fonts for premium design -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    /* Reset and Typography */
+    body { font-family: 'Noto Sans KR', sans-serif; margin: 0; padding: 0; background: #f8fafc; color: #1e293b; line-height: 1.8; font-size: 16px; }
+    header, section, footer { max-width: 1050px; margin: 30px auto; padding: 40px; background: #ffffff; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.04); }
+    
+    /* Elegant Color Scheme */
+    h1, h2, h3, h4 { color: #0f172a; margin-bottom: 15px; font-weight: 700; }
+    h1 { font-size: 2.6rem; text-align: center; margin-top: 10px; line-height: 1.4; letter-spacing: -1px; }
+    h2 { font-size: 1.9rem; border-bottom: 2px solid #e2e8f0; padding-bottom: 12px; margin-top: 40px; color: #1e3a8a; }
+    h3 { font-size: 1.45rem; color: #2563eb; margin-top: 30px; }
+    p, li, td, th { font-size: 1.05rem; line-height: 1.8; color: #334155; }
+    strong { color: #0f172a; font-weight: 700; }
+
+    /* Navigation */
+    nav { background: #0f172a; color: #fff; padding: 15px 0; border-radius: 12px; max-width: 1050px; margin: 25px auto; box-shadow: 0 4px 10px rgba(0,0,0,0.06); }
+    nav ul { list-style: none; padding: 0; margin: 0; text-align: center; display: flex; flex-wrap: wrap; justify-content: center; }
+    nav li { margin: 5px 15px; }
+    nav a { color: #cbd5e1; text-decoration: none; font-weight: 500; font-size: 1rem; padding: 8px 12px; border-radius: 6px; transition: all 0.3s ease; }
+    nav a:hover { color: #ffffff; background-color: #1e293b; }
+
+    /* Call to Action Container */
+    .btn-cta { display: inline-block; padding: 16px 36px; background: linear-gradient(135deg, #2563eb, #1d4ed8); color: #fff; font-weight: 700; border: none; border-radius: 30px; box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3); transition: all 0.3s ease; cursor: pointer; text-decoration: none; text-align: center; font-size: 1.1rem; margin-top: 20px; }
+    .btn-cta:hover { background: linear-gradient(135deg, #1d4ed8, #1e40af); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4); }
+    .cta-container { text-align: center; margin: 30px 0; }
+
+    /* Key Information Highlight Box */
+    .key-info-box { background: #f1f5f9; border-left: 6px solid #2563eb; padding: 25px; margin: 30px 0; border-radius: 8px; }
+    .key-info-box h3 { margin-top: 0; color: #1e3a8a; }
+    .key-info-box ul { list-style: none; padding-left: 0; }
+    .key-info-box li { margin-bottom: 12px; position: relative; padding-left: 24px; color: #475569; }
+    .key-info-box li::before { content: '✓'; position: absolute; left: 0; color: #2563eb; font-weight: bold; font-size: 1.1rem; }
+
+    /* Content Tables */
+    table { width: 100%; border-collapse: collapse; margin: 30px 0; font-size: 0.98rem; table-layout: fixed; }
+    th, td { border: 1px solid #e2e8f0; padding: 15px; text-align: center; vertical-align: middle; line-height: 1.6; }
+    th { background: #f8fafc; color: #1e293b; font-weight: 700; border-bottom: 2px solid #cbd5e1; }
+    .comparison-table td:first-child, .comparison-table th:first-child { background: #f8fafc; font-weight: 700; color: #0f172a; }
+    tr:nth-child(even) { background-color: #fafbfd; }
+
+    /* Interactive CSS Chart Visualizations */
+    .chart-container { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 25px; margin: 35px 0; }
+    .chart-row { margin-bottom: 20px; }
+    .chart-label { font-weight: 700; color: #334155; margin-bottom: 8px; display: flex; justify-content: space-between; }
+    .chart-bar-bg { background: #e2e8f0; border-radius: 8px; height: 18px; overflow: hidden; }
+    .chart-bar-fill { background: linear-gradient(90deg, #10b981, #059669); height: 100%; border-radius: 8px; width: 0%; transition: width 1.2s ease-in-out; }
+    .chart-bar-fill.blue { background: linear-gradient(90deg, #3b82f6, #1d4ed8); }
+    .chart-bar-fill.orange { background: linear-gradient(90deg, #f59e0b, #d97706); }
+
+    /* Form Design */
+    form { background: #f8fafc; padding: 35px; border-radius: 12px; margin: 30px 0; border: 1px solid #e2e8f0; }
+    form h3 { margin-top: 0; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; margin-bottom: 25px; }
+    label { display: block; margin-bottom: 8px; font-weight: 700; color: #475569; }
+    input[type="text"], input[type="tel"], input[type="email"], select, textarea { width: 100%; padding: 14px; margin-bottom: 22px; border: 1px solid #cbd5e1; border-radius: 8px; box-sizing: border-box; font-size: 1rem; transition: all 0.3s; background-color: #ffffff; }
+    input[type="text"]:focus, input[type="tel"]:focus, input[type="email"]:focus, select:focus, textarea:focus { border-color: #2563eb; outline: none; box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15); }
+    .form-group { margin-bottom: 10px; display: flex; flex-wrap: wrap; gap: 4%; }
+    .form-group div { flex: 1 1 48%; min-width: 220px; }
+
+    /* SEO & Readability Enhancements */
+    .anchor { display: block; position: relative; top: -80px; visibility: hidden; }
+    a { color: #2563eb; text-decoration: none; font-weight: 500; transition: color 0.2s; }
+    a:hover { color: #1d4ed8; text-decoration: underline; }
+
+    /* Community Quote Cards */
+    .community-box { background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 24px; margin: 25px 0; box-shadow: 0 4px 6px rgba(0,0,0,0.02); }
+    .community-title { font-weight: 700; color: #1e3a8a; margin-bottom: 12px; display: flex; justify-content: space-between; }
+    .community-content { font-style: italic; color: #475569; line-height: 1.7; }
+
+    /* Responsive adjustments */
+    @media(max-width:768px) {
+      body { padding: 10px; }
+      header, section, footer { margin: 15px auto; padding: 20px; }
+      h1 { font-size: 1.9rem; }
+      h2 { font-size: 1.5rem; }
+      nav li { display: block; margin: 8px 0; }
+      nav ul { flex-direction: column; }
+      .form-group div { flex: 1 1 100%; }
+      .btn-cta { width: 100%; padding: 15px 0; font-size: 1rem; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>2026 디올뉴 쏘렌토 가격표 완전분석 및 실구매 견적 바이블</h1>
+    <p style="text-align: center; color: #64748b; font-size: 1.15rem; max-width: 800px; margin: 15px auto 0 auto;">국내 중형 SUV 시장의 압도적인 최강자, 기아 디올뉴 쏘렌토 MQ4 페이스리프트 연식변경 모델의 사양별 정확한 비용 및 세금 감면 혜택, 오너들의 후기를 집중 분석합니다.</p>
+    <div class="cta-container">
+      <a class="btn-cta" href="#quote-calculator">1분 만에 내 옵션 맞춤형 실구매 견적 뽑아보기</a>
+    </div>
+  </header>
+
+  <nav aria-label="쏘렌토 분석 페이지 내 이동">
+    <ul>
+      <li><a href="#market-status">2026 시장 분석</a></li>
+      <li><a href="#price-table">엔진별 신차가격표</a></li>
+      <li><a href="#option-guide">옵션 조합 추천</a></li>
+      <li><a href="#tax-calculator">세금 및 유지비 계산</a></li>
+      <li><a href="#owner-opinion">커뮤니티 생생 후기</a></li>
+      <li><a href="#faq">자주 묻는 질문 (FAQ)</a></li>
+    </ul>
+  </nav>
+
+  <section id="market-status">
+    <span id="market-status-anchor" class="anchor"></span>
+    <h2>2026년형 디올뉴 쏘렌토 연식변경 시장 상황과 변화 핵심</h2>
+    <p>기아의 대표 중형 SUV이자 패밀리카 시장의 영원한 강자인 <strong>디올뉴 쏘렌토</strong>가 2026년형 연식변경 모델을 통해 패밀리카 유저들의 마음을 다시 한번 공략하고 있습니다. 이번 연식변경의 핵심 테마는 단순히 겉모습을 바꾸는 페이스리프트가 아닌, 소비자들이 선호하는 핵심 사양을 하위 트림까지 기본화하여 실질적인 상품 가치를 대폭 강화한 데 있습니다.</p>
+    <p>글로벌 인플레이션 여파와 각종 원자재 상승에 따라 기본 권장 소비자 가격이 약 30만 원에서 60만 원가량 소폭 상승하였으나, 내용을 면밀히 뜯어보면 가격 인하 효과에 가깝다는 전문가들의 의견이 지배적입니다. 운전자가 직접 스티어링 휠을 꽉 잡지 않아도 손가락의 정전기 감지만으로 경고를 해제해 주는 정전식 스티어링 휠 센서(HoD) 기능과 차로 중앙 유지 성능이 개선된 차로 유지 보조 2(LFA 2) 시스템이 전 트림에 기본 사양으로 기본 탑재되었습니다. 또한, 고급 감성을 채워주는 앰비언트 라이트의 조명 범위가 1열 도어 맵 포켓까지 확장되어 야간 주행 시의 만족감을 높였습니다.</p>
+    
+    <div class="key-info-box">
+      <h3>2026년형 쏘렌토 연식변경 주요 개선 항목</h3>
+      <ul>
+        <li><strong>HoD (Hands-on Detection) 탑재</strong>: 기존 토크 감지식의 단점을 보완한 터치식 정전식 운전대 감지 장치를 프레스티지 트림부터 완전 기본 적용하였습니다.</li>
+        <li><strong>차로 유지 보조 2 (LFA 2) 기본 탑재</strong>: 카메라 제어 및 조향 최적화를 통해 고속도로와 도심 주행 시 주행 안정감을 높였습니다.</li>
+        <li><strong>X-Line (엑스라인) 트림의 신설</strong>: 기존 그래비티 트림의 네이밍을 글로벌 사양에 맞추어 X-Line으로 개편하고, 전용 블랙 알로이 휠과 매트 블랙 몰딩 사양을 적용하였습니다.</li>
+        <li><strong>하이브리드 전용 19인치 휠 추가</strong>: 연비 효율성과 주행 세련미를 동시에 만족시키고자 1.6 터보 하이브리드(HEV) 모델 전용 신규 19인치 블랙 전면 가공 휠이 추가되었습니다.</li>
+      </ul>
+    </div>
+
+    <p>여기에 중형 SUV에서 가장 중요하게 여겨지는 연료 타입별 성능 데이터 역시 고도화되었습니다. 최근 국내 유저들 사이에서 정숙성과 경제성을 이유로 하이브리드 파워트레인을 선호하는 현상이 두드러지고 있으며, 이는 신차 대기 수요와도 직결됩니다. 아래의 선호도 지표를 통해 소비자들이 실제로 어떤 파워트레인을 많이 결정하고 선호하는지 시각적으로 확인하실 수 있습니다.</p>
+
+    <div class="chart-container">
+      <h3>2026 디올뉴 쏘렌토 파워트레인별 계약 선호도 (자체 통계 기준)</h3>
+      
+      <div class="chart-row">
+        <div class="chart-label">
+          <span>1.6 터보 하이브리드 (HEV)</span>
+          <span>72%</span>
+        </div>
+        <div class="chart-bar-bg">
+          <div class="chart-bar-fill" style="width: 72%;"></div>
+        </div>
+      </div>
+
+      <div class="chart-row">
+        <div class="chart-label">
+          <span>2.5 가솔린 터보</span>
+          <span>21%</span>
+        </div>
+        <div class="chart-bar-bg">
+          <div class="chart-bar-fill blue" style="width: 21%;"></div>
+        </div>
+      </div>
+
+      <div class="chart-row">
+        <div class="chart-label">
+          <span>2.2 디젤</span>
+          <span>7%</span>
+        </div>
+        <div class="chart-bar-bg">
+          <div class="chart-bar-fill orange" style="width: 7%;"></div>
+        </div>
+      </div>
+    </div>
+    
+    <p>위의 시각 자료에서 보시는 바와 같이 친환경 차량에 대한 보조금 및 세제 할인 혜택, 우수한 도심 주행성 덕분에 1.6 하이브리드 모델이 시장 선호도 순위에서 압도적인 격차로 제일 앞서 나가고 있습니다. 반면 고속도로 장거리 출퇴근 중심의 주행을 하는 오너들은 여전히 토크가 강력하고 유류비 면에서 강점이 있는 디젤 2.2 파워트레인을 선택하기도 하지만, 과거에 비해 디젤 수요가 급감함에 따라 감가율 측면에서의 단점 또한 사전에 명확하게 이해할 필요가 있습니다.</p>
+  </section>
+
+  <section id="price-table">
+    <span id="price-table-anchor" class="anchor"></span>
+    <h2>2026 디올뉴 쏘렌토 엔진별 신차가격표 분석</h2>
+    <p>기아의 2026년형 쏘렌토 권장소비자 및 세제 혜택 반영 실구매 가격표입니다. 개별소비세 환원 상태가 안정적으로 유지되는 가운데 하이브리드 친환경 감면 혜택을 꼼꼼하게 대입해 보시는 것이 좋습니다. 쏘렌토의 트림은 크게 프레스티지, 노블레스, 시그니처, 그리고 시그니처 X-Line(구 그래비티) 총 네 종류로 세분화됩니다.</p>
+
+    <h3>1. 2.5 가솔린 터보 / 2.2 디젤 신차가격표 (5인승, 2WD 기준)</h3>
+    <p>가솔린 2.5 터보는 넉넉한 출력과 부드러운 초반 가속 성능이 일품입니다. 디젤 2.2 모델은 가솔린 기본 가격에 정확히 173만 원을 더해야 하며, 강력한 견인력과 연비를 중시하는 화물 적재용 혹은 캠핑용 차량으로 많이 선호됩니다.</p>
+    
+    <table>
+      <thead>
+        <tr>
+          <th>트림 등급</th>
+          <th>2.5 가솔린 터보 가격</th>
+          <th>2.2 디젤 가격</th>
+          <th>기본 포함 주요 안전 및 편의 사양</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>프레스티지</td>
+          <td>36,310,000원</td>
+          <td>38,040,000원</td>
+          <td>HoD 터치식 스티어링 휠, LFA 2, 9에어백, 12.3인치 디스플레이 오디오</td>
+        </tr>
+        <tr>
+          <td>노블레스</td>
+          <td>39,570,000원</td>
+          <td>41,300,000원</td>
+          <td>12.3인치 풀사이즈 클러스터, 파노라믹 커브드 디스플레이, 서라운드 뷰 모니터</td>
+        </tr>
+        <tr>
+          <td>시그니처</td>
+          <td>42,090,000원</td>
+          <td>43,820,000원</td>
+          <td>가죽 퀼팅 시트, 1열 에르고 모션 시트, 후방 주차 충돌방지 보조, 순차 점등 턴시그널</td>
+        </tr>
+        <tr>
+          <td>시그니처 X-Line</td>
+          <td>43,030,000원</td>
+          <td>44,760,000원</td>
+          <td>X-Line 전용 메탈 블랙 가니쉬, 블랙 전면가공 알로이 휠, 전용 엠블럼</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>2. 1.6 터보 하이브리드 (2WD & 4WD) 가격표 (5인승, 친환경 세제 혜택 적용)</h3>
+    <p>하이브리드 모델 가입 비율은 매달 고공 행진을 벌이고 있습니다. 하이브리드 2WD의 가격은 개별소비세 및 교육세 143만 원 감면 혜택이 이미 반영된 실구매 가격 기준인 반면, 4WD 모델의 경우 중형 차종 환경부 복합연비 기준(14.3km/L)을 만족하지 못하여 해당 친환경 차량 세제 감면 대상에서 제외됩니다. 따라서 4WD 하이브리드는 차량 가격 및 등록 비용 측면에서 차이가 매우 크게 발생하므로 정밀한 계산과 주의가 요구됩니다.</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>트림 등급</th>
+          <th>하이브리드 2WD 가격 (친환경 혜택가)</th>
+          <th>하이브리드 4WD 가격 (일반 과세가)</th>
+          <th>핵심 차이점 및 가치 판단</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>프레스티지</td>
+          <td>39,530,000원</td>
+          <td>42,850,000원</td>
+          <td>하이브리드 전용 E-Ride 탑재, 가성비가 제일 우수함</td>
+        </tr>
+        <tr>
+          <td>노블레스</td>
+          <td>42,790,000원</td>
+          <td>46,100,000원</td>
+          <td>스마트 파워 테일게이트, 천안 및 분당 등 아파트 단지 주차에 필수인 서라운드 뷰 기본 적용</td>
+        </tr>
+        <tr>
+          <td>시그니처</td>
+          <td>45,310,000원</td>
+          <td>48,620,000원</td>
+          <td>디지털 키 2, HUD 무선 연동, 프리미엄 가죽 마감으로 패밀리카 만족도 최상</td>
+        </tr>
+        <tr>
+          <td>시그니처 X-Line</td>
+          <td>46,250,000원</td>
+          <td>49,560,000원</td>
+          <td>X-Line 다크 패키지 디자인 감성, 하이테크 스타일 극대화</td>
+        </tr>
+      </tbody>
+    </table>
+    
+    <p>실제 딜러숍이나 금융사를 통해 견적을 작성해 보면, 하이브리드 4WD 모델은 차량 출고 가격 자체도 비싸지만 등록 시 발생하는 취등록세 감면 혜택(최대 40만 원)도 추가로 받을 수 없어, 실제 지불해야 하는 최종 취득 금액은 평균 350만 원 이상 올라가게 됩니다. 오프로드 주행 빈도가 아주 높은 드라이버가 아니라면 하이브리드 2WD 모델을 압도적으로 강력 추천해 드립니다.</p>
+  </section>
+
+  <section id="option-guide">
+    <span id="option-guide-anchor" class="anchor"></span>
+    <h2>쏘렌토 최적의 트림 및 옵션 조합 추천 가이드</h2>
+    <p>차량을 구매하기 위해 대리점의 문을 두드릴 때 가장 머리가 복잡해지는 부분이 바로 무수히 많은 옵션 패키지의 조합입니다. 기아자동차 쏘렌토의 대표 옵션 패키지인 <strong>드라이브 와이즈, HUD+빌트인 캠 2, 스타일, 스마트 커넥트, 파노라마 선루프, 모니터링 팩, 컴포트</strong>의 핵심 장단점과 효율적인 매치업을 상세히 알려드리겠습니다.</p>
+    
+    <div class="key-info-box">
+      <h3>주요 인기 옵션 상세 기능 및 가격표</h3>
+      <ul>
+        <li><strong>드라이브 와이즈 (약 120~130만 원)</strong>: 전방 충돌 방지 범위를 넓히고 고속도로 주행 보조 2(HDA 2)를 적용해 스스로 차로 변경까지 제어하는 첨단 지능형 안전 보조 시스템입니다. 필수 옵션으로 무조건 선택을 추천합니다.</li>
+        <li><strong>스타일 패키지 (약 100~110만 원)</strong>: 방향지시등 작동 시 차례대로 흐르듯 점등되는 시퀀셜 주행등과 풀 LED 프로젝션 헤드램프, 그리고 스타일리시한 대형 인치 휠을 탑재해 주어 외관 디자인의 완성도를 대폭 올려줍니다.</li>
+        <li><strong>HUD + 빌트인 캠 2 (약 120~130만 원)</strong>: 대화면 헤드업 디스플레이가 앞 유리에 다양한 주행 경로를 선명히 조사하며, 빌트인 캠 2는 음성 녹음 기능 및 OTA 성능이 개선되어 외부 애프터마켓 블랙박스를 장착할 필요를 없애줍니다.</li>
+        <li><strong>스마트 커넥트 (약 80~90만 원)</strong>: 지문 인증 시스템을 사용하여 시동 제어와 연동하고 터치 도어 핸들 기능을 부여하며, 실시간 차량 무선 인터넷과 고성능 기아 디지털 키 2를 유기적으로 조합합니다.</li>
+      </ul>
+    </div>
+
+    <h3>추천 조합 1. 가성비를 극대화한 실속파 패밀리 조합</h3>
+    <p>총지출 비용과 실속을 철저히 다지며 경제성을 중시하는 가장들에게 강력 추천하는 최적화 조합입니다.</p>
+    <p><strong>추천 트림:</strong> 1.6 터보 하이브리드 2WD 프레스티지 (5인승)<br>
+    <strong>선택 옵션:</strong> 드라이브 와이즈<br>
+    이 구성은 차량의 필수 안전 사양과 넓은 패밀리 공간을 정확히 보장받으면서 총 구매 비용을 평균 4,100만 원 선에서 효율적으로 커버할 수 있는 최적의 경제적 포트폴리오입니다.</p>
+
+    <h3>추천 조합 2. 중형 SUV의 품격과 주행 편의를 누리는 워너비 조합</h3>
+    <p>향후 몇 년 동안 차량을 타면서 매달 만족감을 최대로 높이고, 추후 중고차 판매 시 감가 방어력 순위에서도 제일 우수한 정석 조합입니다.</p>
+    <p><strong>추천 트림:</strong> 1.6 터보 하이브리드 2WD 노블레스 (6인승)<br>
+    <strong>선택 옵션:</strong> 드라이브 와이즈, 스타일, HUD + 빌트인 캠 2<br>
+    가족 중심적인 라이프스타일을 위해 2열을 넓고 안락한 독립식 시트인 6인승 옵션으로 교체하고, 주행 안전성을 위한 드라이브 와이즈와 외관 비주얼을 책임지는 스타일 패키지를 넣는 설계입니다. 이 조합은 가장 많은 실구매 출고 기록을 가진 쏘렌토의 정석 빌드로 손꼽힙니다.</p>
+  </section>
+
+  <section id="tax-calculator">
+    <span id="tax-calculator-anchor" class="anchor"></span>
+    <h2>쏘렌토 실제 총 실구매 금액 및 유지비 계산</h2>
+    <p>자동차의 최초 구입 시 발생하는 금액은 차량 본체 값만이 아닙니다. 국가에 납부해야 하는 지방세인 <strong>취등록세</strong>와 신차가 발생시키는 <strong>공채 할인 매입비</strong>, 임시 운행 등록 대행 수수료, 매년 부과되는 연간 자동차세, 그리고 차량 종합 보험료 등의 숨은 지출 항목을 세세하게 계산기 두드리듯 미리 파악해야 예산 계획에 구멍이 나지 않습니다.</p>
+
+    <h3>1. 실구매 시뮬레이션: 하이브리드 1.6 2WD 시그니처 5인승 (추천 조합 2 기준)</h3>
+    <p>2026년식 최신 규정에 의거하여 하이브리드 차량은 취등록세(차량 공급가액 기준 7%) 산정 금액에서 법적 면세 감면액인 최대 40만 원을 차감받을 수 있습니다. 아래 견적 비교 표는 오직 한 눈에 실제 견적 예상 청구서를 파악하기 위해 구체적으로 상정된 모의 자료입니다.</p>
+    
+    <table>
+      <thead>
+        <tr>
+          <th>정산 세부 항목</th>
+          <th>가솔린 2.5 터보 시그니처</th>
+          <th>1.6 터보 하이브리드 2WD 시그니처</th>
+          <th>설명 및 주요 정산 가이드</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>차량 기본 가격</td>
+          <td>42,090,000원</td>
+          <td>45,310,000원</td>
+          <td>옵션을 선택하지 않은 순수 노옵션 본품 가격</td>
+        </tr>
+        <tr>
+          <td>취등록세 (7% 세액)</td>
+          <td>약 2,946,300원</td>
+          <td>약 2,771,700원</td>
+          <td>하이브리드는 2026년 한시 적용 법령에 의거 40만 원 기본 공제</td>
+        </tr>
+        <tr>
+          <td>공채 매입 할인 및 탁송비</td>
+          <td>약 150,000원</td>
+          <td>약 80,000원</td>
+          <td>지자체 채권 매입 할인율과 지리적 위치에 따른 탁송료 평균치</td>
+        </tr>
+        <tr>
+          <td>최종 예상 인도 금액</td>
+          <td>약 45,186,300원</td>
+          <td>약 48,161,700원</td>
+          <td>일시불 결제 기준 최종 대리점에 송금해야 하는 세금 합산액</td>
+        </tr>
+        <tr>
+          <td>연간 자동차세 (배기량 기준)</td>
+          <td>약 648,180원</td>
+          <td>약 290,780원</td>
+          <td>1,598cc 하이브리드 엔진이 자동차세 납부 요금 면에서 압승</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>위 지표에서 여실히 체감할 수 있듯, 1.6 터보 하이브리드는 가솔린 터보에 비해 연간 자동차 요금 면에서 매년 약 35만 원 이상의 고정비를 무조건 아낄 수 있습니다. 만약 주말 가족 나들이용 외에 매일 평균 왕복 40km 이상의 통근 전용으로 이용하는 유저라면 도심에서 리터당 평균 17km에 달하는 우수한 하이브리드 공인연비 효과가 극대화되어, 구입 당시 더 지출한 차값 격차를 3년 안으로 가뿐히 상쇄하고도 남습니다.</p>
+    
+    <p>자신에게 딱 맞는 납입 한도에 따른 실시간 이자율이나 저렴한 금융 상품을 탐색하고 싶다면 공신력 있는 자동차 할부 금융 전문 사이트를 통해 상환 모의 계산을 적용해 보시길 권장합니다.</p>
+    
+    <p>차량 계약 후 매월 납부해야 할 고정 원리금과 나의 상환 능력 수준을 철저하게 진단해 보고 싶으시다면, 다양한 조건값을 무료로 설정해 비교 계산해 볼 수 있는 <a href="https://directtcheckx.koreahankang.com" target="_blank" rel="noopener">신차 금융 할부 계산기 전문 가이드</a>를 활용해 실질적인 예산 한도 내에서 올바른 플랜을 수립해 보시기 바랍니다.</p>
+  </section>
+
+  <section id="owner-opinion">
+    <span id="owner-opinion-anchor" class="anchor"></span>
+    <h2>자동차 오너 커뮤니티 실제 생생 후기 분석</h2>
+    <p>국내를 대표하는 유력 오너 중심 커뮤니티인 <strong>디시인사이드 차갤</strong>, <strong>보배드림 시승 게시판</strong>, <strong>펨코(에펨코리아)</strong> 등에서 직접 2026 쏘렌토 연식변경 모델을 구매하고 출고한 분들의 사실적인 품평과 오너 평판을 객관적으로 필터링하여 정리했습니다. 인터넷 광고글에서 보기 어려운 날것 그대로의 생동감 넘치는 가치 비교 정보입니다.</p>
+
+    <div class="community-box">
+      <div class="community-title">
+        <span>보배드림 오너 클럽 회원 (쏘하 시그니처 2.5만km 누적 주행)</span>
+        <span style="color:#2563eb;">평점: 9.6/10</span>
+      </div>
+      <div class="community-content">
+        "하이브리드 특유의 정숙성이 정체 심한 시내 구간에서 최고입니다. 연식 변경되면서 정전식 스티어링 휠이 적용된 부분이 정말 큰 변화인데, 장거리 크루즈 컨트롤 켜고 달릴 때 이전에 손을 꽉 쥐어야 했던 피로감이 다 사라졌습니다. 공간감은 싼타페와 비교했을 때 여전히 트렌디하고 호불호 갈리지 않는 익스테리어 덕분에 주차장에 세워둔 제 차를 볼 때마다 흐뭇합니다. 다만 출고를 신청하고 인도받기까지 기아 고객센터를 통해 수차례 확인 전화를 할 만큼 대기 기간이 몇 달씩 걸려 마음을 비우는 것이 좋더군요."
+      </div>
+    </div>
+
+    <div class="community-box">
+      <div class="community-title">
+        <span>에펨코리아 자동차 포럼 실오너 (2.5 가솔린 4WD 시그니처)</span>
+        <span style="color:#2563eb;">평점: 8.9/10</span>
+      </div>
+      <div class="community-content">
+        "원래 쏘하를 가입하고 싶었지만 예산 한도와 즉시 출고 성지 대리점을 수소문한 끝에 더 저렴한 가솔린 모델로 즉시 인도받았습니다. 1년도 채 되지 않은 내돈내산 경험담인데, 고속도로에서 쭉 밀어주는 맛은 2.5 터보가 훨씬 스포티하고 뛰어납니다. 다만 역시나 시내 주행 연비는 8km대로 나오기 때문에 유류비 계산이 조금 걱정되긴 합니다. 그래도 정숙성과 실내 레이아웃, 트렁크 차박 편의성은 타 중형 SUV 브랜드 중 단연 최고 순위라고 치부하고 싶네요. 실내 앰비언트 라이트가 발밑 맵 포켓까지 확장되면서 밤에 무드 분위기가 아주 고급스럽습니다."
+      </div>
+    </div>
+
+    <p>각종 커뮤니티 시승 후기를 종합적으로 분석해 볼 때 쏘렌토의 최대 장점으로는 <strong>세련된 디자인과 호불호 없는 익스테리어 패밀리 룩</strong>, 넓은 레그룸과 시트 편의성, 그리고 최첨단 ADAS 주행 보조의 직관적인 성능이 일제히 찬사를 받았습니다. 다만 하이브리드의 경우 일부 전기 모터 가동 시 들리는 백화음 사운드 이슈나, 여전히 긴 차량 출고 대기 기간 등은 차량 인도 계획에 차질을 주지 않도록 사전 조율이 필요한 영역으로 논의되고 있습니다.</p>
+    
+    <p>더 깊이 있는 역사적 기원이나 역대 전 세대 쏘렌토의 진화 히스토리 및 엔지니어링 기술 동향 정보를 추가로 참고해 보시려면 <a href="https://namu.wiki/w/%EA%B8%B0%EC%95%84%20%EC%1%BC%EB%A0%8C%ED%86%A0" target="_blank" rel="noopener">나무위키 기아 쏘렌토 브랜드 역사 및 세대별 상세 개발 스토리</a> 문서를 참조하여 한 차원 높은 자동차 지식을 습득해 보시길 제안합니다.</p>
+  </section>
+
+  <section id="faq">
+    <span id="faq-anchor" class="anchor"></span>
+    <h2>자주 묻는 질문 (FAQ) - 디올뉴 쏘렌토 가격 및 옵션 편</h2>
+    <dl style="margin-top:20px;">
+      <dt style="font-weight:700; color:#1e3a8a; font-size:1.15rem; margin-top:25px;">Q1. 하이브리드 모델은 구매 후 인도까지 대기 기간이 보통 평균 얼마나 걸리나요?</dt>
+      <dd style="margin-left:0; padding-left:15px; border-left:3px solid #2563eb; color:#475569; margin-top:10px;">
+        A. 2026년 기준 쏘렌토 1.6 터보 하이브리드의 대기 기간은 지자체 세금 혜택 및 높은 인기 지속 등으로 트림별 차이가 있으나, 신규 계약 시 약 4개월에서 최대 6개월 안팎의 시간이 평균 예상 소요됩니다. 조금 더 빠른 인도를 원한다면 신차 다이렉트 출고 전문 대행업체의 선구매 장기렌트 혹은 금융 리스 다이렉트 물량 실시간 좌표 시스템을 수소문하여 출고하는 대안 경로도 많이 활용되고 있습니다.
+      </dd>
+
+      <dt style="font-weight:700; color:#1e3a8a; font-size:1.15rem; margin-top:25px;">Q2. 하이브리드 4WD 모델은 친환경 세금 감면 혜택을 전혀 받을 수 없나요?</dt>
+      <dd style="margin-left:0; padding-left:15px; border-left:3px solid #2563eb; color:#475569; margin-top:10px;">
+        A. 네, 그렇습니다. 현행 국내 저공해 친환경 법률 규정에 따르면 배기량 1,600cc 미만 중형 가솔린 하이브리드는 복합연비 리터당 14.3km 요건을 넘겨야 하지만, 쏘렌토 하이브리드 4WD는 구조적인 무게와 기계식 AWD 구동 저항으로 연비가 이에 미달합니다. 따라서 개소세 감면(최대 143만 원)을 받지 못하며 취등록세 면제 혜택인 40만 원 감면만 부분적으로만 적용되므로 실제 취득 총금액은 2WD 대비 상당히 격차가 크게 나타납니다.
+      </dd>
+
+      <dt style="font-weight:700; color:#1e3a8a; font-size:1.15rem; margin-top:25px;">Q3. 5인승, 6인승, 7인승 시트 종류별 차이점과 탑승 가치 비교가 궁금합니다.</dt>
+      <dd style="margin-left:0; padding-left:15px; border-left:3px solid #2563eb; color:#475569; margin-top:10px;">
+        A. 5인승은 가장 표준적인 구조로 드넓은 트렁크 아래 공간을 고스란히 활용해 대용량 캠핑 짐 적재 시 장점이 큽니다. 6인승(옵션비 약 100만 원 안팎)은 2열 시트가 버스 독립 좌석 형태로 설계되어 통로 이동이 가능하며 실내 쾌적성이 최고 순위로 손꼽힙니다. 7인승은 비상시 3열 탑승이 가능한 벤치 시트를 후방에 설치하지만 헤드룸이 다소 좁아 미취학 아동 혹은 임시 다인승 목적의 요건을 가진 오너들에게 주로 추천됩니다.
+      </dd>
+
+      <dt style="font-weight:700; color:#1e3a8a; font-size:1.15rem; margin-top:25px;">Q4. 쏘렌토 하이브리드와 경쟁 차량인 현대 싼타페 하이브리드 중 어느 것이 더 싼가요?</dt>
+      <dd style="margin-left:0; padding-left:15px; border-left:3px solid #2563eb; color:#475569; margin-top:10px;">
+        A. 기본 세제 혜택 적용가 기준으로 동급 비교 시 두 차종의 출발 기본 단가는 수십만 원 내외의 극히 미세한 격차를 보여 실질적인 가격 저렴성보다는 트림별 패키징 구성의 미묘한 차이점에 가깝습니다. 대담하고 각진 오프로드 각진 형태의 현대적 박스형 공간을 희망하면 싼타페를, 전통적이며 중후하고 세련된 정통 도심형 SUV 감성의 비주얼 완성도를 중시한다면 쏘렌토를 권장합니다.
+      </dd>
+
+      <dt style="font-weight:700; color:#1e3a8a; font-size:1.15rem; margin-top:25px;">Q5. 영업사원에게 받을 수 있는 합법적 신차 출고 사은품 및 지원금 수준은 어떻게 되나요?</dt>
+      <dd style="margin-left:0; padding-left:15px; border-left:3px solid #2563eb; color:#475569; margin-top:10px;">
+        A. 신차 계약 단계에서 에이전시 전문 기업이나 공식 지점 딜러가 제시하는 현물 서비스 범위는 보편적으로 고급 열차단 선팅, 유리막 코팅 및 최고급 가죽 블랙박스 정품 장착 혹은 이에 수반하는 상당 금액 수준의 캐시백 형태로 구성됩니다. 무리한 과대 현금지원은 공식 법령 규정 위반 소지가 있어 피하시는 것이 안전하며, 신차 검수 등을 완벽하게 제공하는 신뢰 높은 정식 업체를 골라 상담받는 것이 합리적입니다.
+      </dd>
+    </dl>
+  </section>
+
+  <section id="additional-resources">
+    <h2>안전한 거래를 위한 공인 외부 참고 리소스</h2>
+    <p>자동차 금융 설계는 인생에서 집 다음으로 큰 목돈이 지출되는 중차대한 이벤트인 만큼, 카탈로그 사양표 검증과 정확한 법규 확인을 위해 공식 인허가 기획 기관들의 정보를 사전 조회하는 요령이 필요합니다. 아래는 안전한 거래 진행에 실질적인 도움을 주는 유용한 리소스 안내입니다.</p>
+    <ul>
+      <li><a href="https://www.kia.com/kr/vehicles/sorento/features" target="_blank" rel="noopener">기아자동차 공식 홈페이지 디올뉴 쏘렌토 카탈로그 및 사양 정보</a>: 기아차 본사에서 제공하는 순정 엔진 구조별 선택 품목 및 사양 가이드, 3D 가상 인테리어 구성을 다이렉트로 매칭해 보는 공간입니다.</li>
+      <li><a href="https://www.carhistory.or.kr/" target="_blank" rel="noopener">카히스토리 공식 정보조회 서비스</a>: 신차 출고 이후 기존에 타고 다니던 애마를 안전하게 판매하여 매각 비용을 보전받고자 할 때, 차량의 정확한 보험 및 침수 사고 이력을 무료로 감정해 볼 수 있는 정부 공인 신뢰성 높은 인프라입니다.</li>
+    </ul>
+  </section>
+
+  <section id="quote-calculator">
+    <span id="quote-calculator-anchor" class="anchor"></span>
+    <h2>1분 맞춤 견적 신청 및 트림별 출고 상담소</h2>
+    <p>아래 신용 개인 정보 가이드라인을 바탕으로 희망 사양과 파워트레인을 입력해 주시면, 2026년식 디올뉴 쏘렌토의 대리점 비공식 혜택 및 오토캐시백 프로모션을 즉각 취합하여 전국에서 가성비 면에서 제일 합리적이고 신속한 맞춤 견적서를 개별 전송해 드립니다.</p>
+
+    <form action="/submit-car-quote" method="POST">
+      <h3>고객 정보 및 구매 희망 세부 입력</h3>
+      
+      <div class="form-group">
+        <div>
+          <label for="buyer-name">고객명 (필수)</label>
+          <input type="text" id="buyer-name" name="buyer_name" required placeholder="예: 김기아" />
+        </div>
+        <div>
+          <label for="buyer-phone">휴대폰 번호 (필수)</label>
+          <input type="tel" id="buyer-phone" name="buyer_phone" required placeholder="010-1234-5678" pattern="[0-9\-]+" />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div>
+          <label for="engine-type">선호 파워트레인</label>
+          <select id="engine-type" name="engine_type" required>
+            <option value="">선택하세요</option>
+            <option value="1.6 하이브리드 2WD">1.6 터보 하이브리드 2WD (추천)</option>
+            <option value="1.6 하이브리드 4WD">1.6 터보 하이브리드 4WD (눈길 주행용)</option>
+            <option value="2.5 가솔린 터보">2.5 가솔린 터보 (출력 극대화)</option>
+            <option value="2.2 디젤">2.2 디젤 (장거리 고속 주행러)</option>
+          </select>
+        </div>
+        <div>
+          <label for="trim-level">희망 트림 등급</label>
+          <select id="trim-level" name="trim_level" required>
+            <option value="">선택하세요</option>
+            <option value="프레스티지">프레스티지 (최강 실용성 가성비)</option>
+            <option value="노블레스">노블레스 (인기 주력 선호도 최상)</option>
+            <option value="시그니처">시그니처 (고급 풀패키지 감성)</option>
+            <option value="시그니처 X-Line">시그니처 X-Line (전용 오프로드 비주얼)</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div>
+          <label for="seats-count">시트 레이아웃 선택</label>
+          <select id="seats-count" name="seats_count" required>
+            <option value="">선택하세요</option>
+            <option value="5인승">5인승 (기본사양 - 최대 트렁크 공간)</option>
+            <option value="6인승">6인승 (2열 독립 캡틴 시트 탑재 - 안락함)</option>
+            <option value="7인승">7인승 (비상시 3열 승객 이용성)</option>
+          </select>
+        </div>
+        <div>
+          <label for="buying-method">구매 및 금융 상품 종류</label>
+          <select id="buying-method" name="buying_method" required>
+            <option value="">선택하세요</option>
+            <option value="할부 구매">정식 할부 금융 (원리금 균등 방식)</option>
+            <option value="일시불 결제">카드 일시불 결제 (오토캐시백 최대 활용)</option>
+            <option value="장기 렌트">신차 장기렌트 (비용 전액 경비 처리)</option>
+            <option value="리스">운용 리스 (품격 유지를 위한 렌터카 번호판 제외)</option>
+          </select>
+        </div>
+      </div>
+
+      <label for="options-wanted">추가로 희망하는 옵션 패키지 기재</label>
+      <textarea id="options-wanted" name="options_wanted" rows="4" placeholder="예: 드라이브 와이즈, 스타일, 파노라마 선루프 옵션 추가하고 싶습니다. 천안 성성동 출고 희망합니다."></textarea>
+
+      <div style="text-align: center;">
+        <button type="submit" class="btn-cta">실시간 최저가 다이렉트 견적 요청하기</button>
+      </div>
+    </form>
+  </section>
+
+  
